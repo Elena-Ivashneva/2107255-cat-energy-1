@@ -1,4 +1,4 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .form {
   padding: 27px 0 32px 0;
@@ -15,7 +15,9 @@
 .form__description {
   margin: 0;
 
-  @include accent-caps-font(14px, 18px);
+  @include caps-text;
+  font-size: 14px;
+  line-height: 18px;
   color: $color-default-black;
 }
 

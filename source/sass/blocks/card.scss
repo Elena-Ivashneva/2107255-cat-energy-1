@@ -1,51 +1,172 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .card {
-  display: grid;
-  align-items: start;
-  gap: 17px 0;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 20px 0 24px;
+  padding: 20px 20px 24px;
   font-size: 12px;
   line-height: 16px;
+
+  @media #{$mobile} {
+    display: grid;
+    justify-content: center;
+    gap: 17px 0;
+    grid-template-columns: repeat(2, minmax(140px, 324px));
+    grid-template-rows: min-content;
+    border-bottom: $divider-special;
+
+    &:first-child {
+      border-top: $divider-special;
+    }
+  }
+
+  @media #{$tablet-desktop} {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 37px 40px;
+    font-size: inherit;
+    line-height: 1.25;
+    background-image: linear-gradient(transparent 81px, $color-bg-basic 81px);
+  }
+
+  @media #{$desktop} {
+    padding-right: 38px;
+    padding-left: 38px;
+  }
 }
 
 .card__link-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-self: center;
-  width: 140px;
-  height: 107px;
-  padding: 0 17px;
+  min-height: 107px;
+  padding: 2px 17px;
+
+  @media #{$tablet-desktop} {
+    height: 210px;
+    margin-bottom: 22px;
+    padding: 0;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 12px;
+  }
+}
+
+.card__image {
+  max-width: 106px;
+  max-height: 107px;
+  object-fit: contain;
+
+  @media #{$tablet-desktop} {
+    max-width: 200px;
+    max-height: 100%;
+  }
+
+  @media #{$desktop} {
+    max-width: 169px;
+  }
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  padding: 1px 0 3px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 32px;
+    padding: 0;
+  }
 }
 
 .card__link-title {
-  display: block;
-  width: 55%;
-  min-height: 40px;
+  width: 60%;
+  min-width: 90px;
   margin-bottom: 15px;
+  padding-right: 1px;
 
-  @include reset-link;
+  @media #{$tablet-desktop} {
+    width: auto;
+    min-width: auto;
+    margin: 0 auto 20px;
+    padding: 0 10px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 24px;
+  }
 }
 
 .card__title {
+  min-height: 40px;
   margin: 0;
 
   font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
 
-  @include accent-caps-font(16px, 1.25);
+  @include caps-text;
   color: $color-nero;
+
+  @media #{$mobile} {
+    br {
+      display: none;
+    }
+  }
+
+  @media #{$tablet-desktop} {
+    min-height: 48px;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+  }
 }
 
 .card__properties {
   margin: 0;
+
+  @media #{$tablet-desktop} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 5px;
+  }
+
+  @media #{$desktop} {
+    gap: 10px;
+    padding-bottom: 11px;
+  }
 }
 
 .card__property {
   display: grid;
+  gap: 8px;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+
+  @media #{$tablet-desktop} {
+    position: relative;
+    gap: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      width: 100%;
+      border-bottom: $border-basic;
+    }
+  }
+
+  @media #{$desktop} {
+    gap: 8px;
+    padding: 2px 0;
+
+    &:first-child,
+    &:last-child {
+      padding: 0;
+    }
+
+    &:last-child::after {
+      bottom: -10px;
+    }
+  }
 }
 
 .card__property-value {
@@ -54,5 +175,9 @@
 }
 
 .card__button {
-  grid-column: 1 / -1;
+  margin-top: auto;
+
+  @media #{$mobile} {
+    grid-column: 1 / -1;
+  }
 }

@@ -1,8 +1,8 @@
 // ----- Common -----
 @use "./common/fonts";
 @use "./common/global";
-@use "./common/visually-hidden";
 @use "./common/container";
+@use "./common/visually-hidden";
 
 // ----- Blocks -----
 @use "./blocks/additional";
@@ -21,11 +21,11 @@
 @use "./blocks/form";
 @use "./blocks/header";
 @use "./blocks/location";
+@use "./blocks/main-menu";
 @use "./blocks/map";
 @use "./blocks/page";
 @use "./blocks/promo";
 @use "./blocks/show-more";
-@use "./blocks/site-nav";
 @use "./blocks/social";
 @use "./blocks/subtitle";
 @use "./blocks/title";

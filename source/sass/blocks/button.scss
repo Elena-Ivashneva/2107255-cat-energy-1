@@ -1,14 +1,17 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .button {
   display: flex;
   justify-content: center;
   padding: 10px 20px;
 
-  @include accent-caps-font(16px, 1.25);
+  font-size: 16px;
+  line-height: 1.25;
+
+  @include caps-text;
   text-align: center;
 
-  @include reset-link;
+
   overflow-wrap: anywhere;
 
   background-color: $color-bg-basic;
@@ -20,9 +23,11 @@
     background-color: $color-accent;
   }
 
-  @media #{$tablet-desktop} {
-    padding: 14px 27px;
-    font-size: 20px;
-    line-height: 1.3;
+  &--wide {
+    @media #{$tablet-desktop} {
+      padding: 14px 27px;
+      font-size: 20px;
+      line-height: 1.3;
+    }
   }
 }

@@ -1,11 +1,11 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .title {
   font-weight: 400;
   font-size: 36px;
   line-height: 1;
   font-family: $font-accent;
-  color: $color-default-black;
+  color: var(--text-color, $color-default-black);
 
   @media #{$mobile} {
     &--line-l {

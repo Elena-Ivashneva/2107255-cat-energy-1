@@ -1,4 +1,4 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .contacts__wrapper {
   display: grid;
@@ -33,7 +33,9 @@
   align-self: center;
   margin: 0;
 
-  @include accent-caps-font(16px, 1.25);
+  @include caps-text;
+  font-size: 16px;
+  line-height: 1.25;
   color: $color-black;
 
   @media #{$tablet-desktop} {

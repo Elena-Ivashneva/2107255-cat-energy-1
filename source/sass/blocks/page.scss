@@ -1,15 +1,10 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .page {
   --page-bg-color: #{$color-default-white};
 
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  min-height: 100vh;
-  color: $color-base;
+  grid-template-rows: min-content 1fr min-content;  // Sticky Footer
+  color: $color-base-grey;
   background-color: var(--page-bg-color);
-}
-
-.page__footer {
-  margin-top: auto; // подстраховка для страниц без main
 }

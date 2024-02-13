@@ -1,27 +1,103 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .show-more {
-  display: grid;
-  gap: 21px 0;
-  padding: 25px 0 24px;
+  padding: 25px 20px 24px;
   font-size: 12px;
   line-height: 16px;
-  text-align: center;
+
+  @media #{$mobile} {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(280px, 648px);
+    grid-template-rows: repeat(2, min-content);
+    border-bottom: $divider-special;
+  }
+
+  @media #{$tablet-desktop} {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 37px 40px;
+    font-size: inherit;
+    line-height: 18px;
+    outline: 2px solid $color-bg-basic;
+    outline-offset: -2px;
+  }
+
+  @media #{$desktop} {
+    padding-right: 38px;
+    padding-left: 38px;
+  }
+
+  &::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 23px;
+    background-color: rgba(211, 211, 211, 0.3);
+
+    @media #{$tablet-desktop} {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 50px;
+    }
+
+    @media #{$desktop} {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .show-more__info {
-  max-width: 230px;
-  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 64px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 55px;
+  }
 }
 
 .show-more__title {
-  margin: 0 0 8px;
+  margin: 0 0 9px;
 
-  @include accent-caps-font(16px, 20px);
   font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+
+  @include caps-text;
   color: $color-black;
+
+  @media #{$mobile} {
+    br {
+      display: none;
+    }
+  }
+
+  @media #{$tablet-desktop} {
+    min-height: 48px;
+    margin-bottom: 23px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 25px;
+  }
 }
 
 .show-more__description {
   margin: 0;
+
+  @media #{$mobile} {
+    br {
+      display: none;
+    }
+  }
+}
+
+.show-more__button {
+  margin-top: auto;
 }

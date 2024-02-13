@@ -1,15 +1,60 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .catalog {
   padding-top: 27px;
+
+  @media #{$mobile} {
+    border-top: $divider-basic;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  @media #{$tablet-desktop} {
+    padding-top: 40px;
+  }
+
+  @media #{$desktop} {
+    padding-top: 45px;
+  }
 }
 
 .catalog__title {
-  margin: 0 0 40px;
+  margin: 0 20px 40px;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 84px;
+  }
 }
 
 .catalog__list {
   display: grid;
 
   @include reset-list;
+
+  @media #{$tablet-desktop} {
+    gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1152px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media #{$desktop} {
+    justify-content: space-between;
+    gap: 63px 60px;
+    grid-template-columns: repeat(4, 245px);
+  }
+}
+
+.catalog__show-more {
+  @media #{$tablet-desktop} {
+    margin-top: 82px;
+  }
+
+  @media #{$desktop} {
+    margin-top: 81px;
+  }
 }

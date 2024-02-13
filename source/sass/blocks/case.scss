@@ -1,4 +1,4 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .case {
   --block-bg-color: #{$color-bg-alter};
@@ -11,7 +11,7 @@
     padding-top: 45px;
     padding-bottom: 101px;
     background: linear-gradient(to top, var(--block-bg-color) 462px, transparent 462px);
-    border-top: $full-divider;
+    border-top: $line-whisper-e6;
   }
 
   @media #{$desktop} {
@@ -167,9 +167,11 @@
   margin: 0;
   padding: 14px 5px 16px;
 
-  @include accent-caps-font(24px, 1);
+  @include caps-text;
+  font-size: 24px;
+  line-height: 1;
   color: $color-default-black;
-  border: 1px solid $color-border-alter;
+  border: $border-basic;
   border-radius: 3px;
 
   @media #{$tablet-desktop} {
@@ -182,7 +184,9 @@
 .case__special-param {
   margin: 0;
 
-  @include accent-caps-font(14px, 20px);
+  @include caps-text;
+  font-size: 14px;
+  line-height: 20px;
   color: $color-default-black;
 
   @media #{$tablet-desktop} {

@@ -1,16 +1,8 @@
-@use "../abstracts/abstracts" as *;
+@use "../abstracts" as *;
 
 .promo {
   padding-top: 27px;
   padding-bottom: 20px;
-  color: $color-default-black;
-
-  @media #{$mobile} {
-    &--accent {
-      position: relative;
-      color: $color-default-white;
-    }
-  }
 
   @media #{$tablet-desktop} {
     padding-top: 40px;
@@ -23,8 +15,10 @@
   }
 
   @media #{$mobile} {
-    &--accent::before,
-    &--accent::after {
+    position: relative;
+
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       top: 0;
@@ -32,7 +26,7 @@
       width: 100%;
     }
 
-    &--accent::before {
+    &::before {
       left: 50%;
       z-index: -1;
       max-width: 384px;
@@ -42,7 +36,7 @@
       transform: translateX(-50%);
     }
 
-    &--accent::after {
+    &::after {
       left: 0;
       z-index: -2;
       background-image: linear-gradient(to right, #65a83c, #62a53a);
@@ -56,34 +50,38 @@
   @media #{$tablet-desktop} {
     align-items: start;
     justify-items: start;
-    padding: 0 90px;
+    padding-right: 90px;
+    padding-left: 90px;
   }
 
   @media #{$desktop} {
     gap: 0 80px;
-    grid-template-columns: calc(50% - 80px) 1fr;
+    grid-template-columns: calc(50% - 120px) 1fr;
     grid-template-rows: min-content 1fr;
-    padding: 0 80px;
+    padding-right: 0;
+    padding-left: 80px;
   }
 }
 
 .promo__info {
   display: grid;
-  justify-items: center;
-  justify-self: center;
   gap: 25px;
-  max-width: 480px;
   margin-bottom: 28px;
-  text-align: center;
+  color: var(--text-color, $color-default-black);
+
+  @media #{$mobile} {
+    --text-color: #{$color-default-white};
+
+    justify-items: center;
+    justify-self: center;
+    max-width: 480px;
+    text-align: center;
+  }
 
   @media #{$tablet-desktop} {
-    justify-items: start;
-    justify-self: start;
     gap: 35px;
-    max-width: 100%;
-    margin-right: 80px;
+    margin-right: 78px;
     margin-bottom: 50px;
-    text-align: left;
   }
 
   @media #{$desktop} {
@@ -94,10 +92,6 @@
 .promo__title {
   margin: 0 0 1px;
 
-  &.title {
-    color: inherit;
-  }
-
   @media #{$tablet-desktop} {
     margin-bottom: 5px;
   }
@@ -107,7 +101,9 @@
   max-width: 90%;
   margin: 0;
 
-  @include accent-caps-font(14px, 1);
+  @include caps-text;
+  font-size: 14px;
+  line-height: 1;
 
   @media #{$tablet-desktop} {
     font-size: 20px;
@@ -140,6 +136,11 @@
     width: 552px;
     height: 499px;
     margin: 0 0 52px -163px;
+  }
+
+  img {
+    max-height: 100%;
+    object-fit: contain;
   }
 }
 
