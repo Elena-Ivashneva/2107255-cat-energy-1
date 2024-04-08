@@ -1,10 +1,9 @@
 // Fonts
-$font-base: "Lato", "Arial", sans-serif;
-$font-accent: "Oswald", "Arial Narrow", sans-serif;
+$font-primary: "Oswald", "Arial Narrow", sans-serif;
 
 // Colors
 $color-default-white: #ffffff;
-$color-base-grey: #444444;
+$color-dark-grey: #444444;
 $color-nero: #222222;
 $color-black: #111111;
 $color-default-black: #000000;
@@ -31,3 +30,7 @@ $desktop-width: 1240px;
 $mobile: "(max-width: #{$tablet-width - 0.02})";
 $tablet-desktop: "(min-width: #{$tablet-width})";
 $desktop: "(min-width: #{$desktop-width})";
+
+:root {
+  --page-bg-color: #{$color-default-white};
+}

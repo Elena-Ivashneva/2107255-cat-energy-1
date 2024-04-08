@@ -1,19 +1,14 @@
-@font-face {
-  font-family: "Lato";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src:
-    url("../fonts/lato/lato-regular.woff2") format("woff2"),
-    url("../fonts/lato/lato-regular.woff") format("woff");
+@mixin font-face($family, $name, $postfix: "regular", $weight: 400) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+    src:
+      url("../fonts/#{$name}/#{$name}-#{$postfix}.woff2") format("woff2"),
+      url("../fonts/#{$name}/#{$name}-#{$postfix}.woff") format("woff");
+  }
 }
 
-@font-face {
-  font-family: "Oswald";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src:
-    url("../fonts/oswald/oswald-regular.woff2") format("woff2"),
-    url("../fonts/oswald/oswald-regular.woff") format("woff");
-}
+@include font-face("Lato", "lato");
+@include font-face("Oswald", "oswald");

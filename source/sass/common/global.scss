@@ -3,8 +3,8 @@
 html {
   box-sizing: border-box;
   font-size: 14px;
-  line-height: calc(18/14);
-  font-family: $font-base;
+  line-height: calc(18 / 14);
+  font-family: "Lato", "Arial", sans-serif;
 
   @media #{$tablet-desktop} {
     font-size: 16px;
@@ -20,13 +20,18 @@ html {
 
 body {
   min-width: 320px;
-  min-height: 100vh;  // Sticky Footer
   margin: 0;
+  color: $color-dark-grey;
+  background-color: var(--page-bg-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+picture {
+  display: contents;
 }
 
 a {

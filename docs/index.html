@@ -5,43 +5,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная | Кэт Энерджи | HTML Академия</title>
-    <meta name="description" content="Личный проект на курсе «HTML и CSS. Адаптивная вёрстка и автоматизация» (индивидуальный тариф).">
+    <meta name="description" content="Учебный проект на курсе «HTML и CSS. Адаптивная вёрстка и автоматизация» (индивидуальный тариф).">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Favicons -->
     <link rel="icon" href="./favicon.ico">
     <link rel="icon" href="./img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="./img/favicons/favicon.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="./img/favicons/favicon-180.png" type="image/png" sizes="180x180">
     <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./css/style.css">
   </head>
 
   <body class="page no-js">
 
-    <header class="header header--accent">
+    <header class="header header--theme-accent">
       <div class="container">
         <div class="header__wrapper">
-          <a class="header__logo" href="./index.html" aria-label="Логотип-ссылка на Главную" aria-current="page">
+          <a class="header__logo" href="./index.html" aria-current="page" aria-label="На главную страницу">
             <picture>
               <source media="(min-width: 1240px)" srcset="./img/logo-desktop.svg" width="202" height="59">
               <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg" width="174" height="50">
-              <img class="header__logo-img" src="./img/logo-mobile.svg" width="33" height="39" alt="Интернет-магазин «Cat Energy».">
+              <img src="./img/logo-mobile.svg" width="33" height="39" alt="Логотип интернет-магазина Cat Energy.">
             </picture>
           </a>
           <a class="header__logo-text" href="./index.html" aria-hidden="true">
             <img src="./img/logo-text.svg" width="101" height="19" alt="">
           </a>
           <button class="header__toggle" type="button">
-            <span class="visually-hidden">Открыть мобильное меню</span>
+            <span class="visually-hidden">Открыть меню</span>
           </button>
           <nav class="header__navigation">
-            <ul class="header__main-menu main-menu main-menu--accent">
-              <li class="main-menu__item">
-                <span class="main-menu__link main-menu__link--current">Главная</span>
+            <ul class="header__nav-menu nav-menu nav-menu--theme-accent">
+              <li class="nav-menu__item">
+                <span class="nav-menu__link nav-menu__link--current">Главная</span>
               </li>
-              <li class="main-menu__item">
-                <a class="main-menu__link" href="./catalog.html">Каталог продукции</a>
+              <li class="nav-menu__item">
+                <a class="nav-menu__link" href="./catalog.html">Каталог продукции</a>
               </li>
-              <li class="main-menu__item">
-                <a class="main-menu__link" href="./form.html">Подбор программы</a>
+              <li class="nav-menu__item">
+                <a class="nav-menu__link" href="./form.html">Подбор программы</a>
               </li>
             </ul>
           </nav>

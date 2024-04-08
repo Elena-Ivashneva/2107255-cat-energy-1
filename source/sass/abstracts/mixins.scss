@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
 @mixin caps-text {
-  font-family: $font-accent;
+  font-family: $font-primary;
   text-transform: uppercase;
 }
 
@@ -9,6 +9,28 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+@mixin interactive-80 {
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+@mixin interactive-60 {
+  &:hover,
+  &:focus-visible {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 @mixin divider($top, $border-color) {

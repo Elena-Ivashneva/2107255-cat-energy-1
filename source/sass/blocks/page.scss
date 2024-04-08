@@ -1,10 +1,7 @@
 @use "../abstracts" as *;
 
 .page {
-  --page-bg-color: #{$color-default-white};
-
   display: grid;
-  grid-template-rows: min-content 1fr min-content;  // Sticky Footer
-  color: $color-base-grey;
-  background-color: var(--page-bg-color);
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;  // Sticky Footer
 }
